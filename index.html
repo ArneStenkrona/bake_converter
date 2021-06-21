@@ -59,8 +59,6 @@
         <legend>Convert</legend>
         <div>
           <datalist id="ingredients">
-            <option>flour</option>
-            <option>cacao</option>
           </datalist>
           <input autoComplete="on" list="ingredients" placeholder="flour" id="ingredient">
         </div>
@@ -68,16 +66,12 @@
         <div>
           <input type="number" id="quantity_from" name="quantity_from_name" placeholder="1">
           <datalist id="units_from">
-            <option>gram(s)</option>
-            <option>kilogram(s)</option>
           </datalist>
           <input autoComplete="on" list="units_from" placeholder="gram(s)" id=unit_from>
         </div>
         to
         <div>
           <datalist id="units_to">
-            <option>milliliter(s)</option>
-            <option>liter(s)</option>
           </datalist>
           <input autoComplete="on" list="units_to" placeholder="liter(s)" id=unit_to>
         </div>
@@ -96,7 +90,20 @@
 </body>
 
 <script>
+  const ingredients_set = new Set();
+  const units_set = new Set();
+  var latest_valid_quantity_from = '1';
+  var latest_valid_ingredient = "flour";
+  var latest_valid_unit_from = "gram(s)";
+  var latest_valid_unit_to = "liter(s)";
+
   document.addEventListener("DOMContentLoaded", function () {
+    initSets();
+
+    populate(document.getElementById("units_from"), units_set);
+    populate(document.getElementById("units_to"), units_set);
+    populate(document.getElementById("ingredients"), ingredients_set);
+
     function updateResults() {
       if (!validInput()) {
         return;
@@ -161,11 +168,39 @@
         }, false);
       }
 
-      // input.addEventListener('change', updateResults, false);
       input.addEventListener('input', updateResults, false);
     }
 
     updateResults();
+
+    var quantity_from = document.getElementById("quantity_from");
+    var unit_from = document.getElementById("unit_from");
+    var unit_to = document.getElementById("unit_to");
+    var ingredient = document.getElementById("ingredient");
+
+    quantity_from.addEventListener('blur', function (event) {
+      if (quantity_from.value === '') {
+        quantity_from.value = latest_valid_quantity_from;
+      }
+    }, false);
+
+    unit_from.addEventListener('blur', function (event) {
+      if (!units_set.has(unit_from.value)) {
+        unit_from.value = latest_valid_unit_from;
+      }
+    }, false);
+
+    unit_to.addEventListener('blur', function (event) {
+      if (!units_set.has(unit_to.value)) {
+        unit_to.value = latest_valid_unit_to;
+      }
+    }, false);
+
+    ingredient.addEventListener('blur', function (event) {
+      if (!ingredients_set.has(ingredient.value)) {
+        ingredient.value = latest_valid_ingredient;
+      }
+    }, false);
   });
 
   function copyInput(id) {
@@ -184,11 +219,51 @@
     var unit_to = document.getElementById("unit_to");
     var ingredient = document.getElementById("ingredient");
 
+    var ret = true;
+
     if (quantity_from.value === '') {
-      return false;
+      ret = false;
+    } else {
+      latest_valid_quantity_from = quantity_from.value;
     }
 
-    return true;
+    if (!units_set.has(unit_from.value)) {
+      ret = false;
+    } else {
+      latest_valid_unit_from = unit_from.value;
+    }
+    if (!units_set.has(unit_to.value)) {
+      ret = false;
+    } else {
+      latest_valid_unit_to = unit_to.value;
+    }
+    if (!ingredients_set.has(ingredient.value)) {
+      ret = false;
+    } else {
+      latest_valid_ingredient = ingredient.value;
+    }
+
+    return ret;
+  }
+
+  function initSets() {
+    ingredients_set.add("flour");
+    ingredients_set.add("cacao");
+
+    units_set.add("gram(s)");
+    units_set.add("kilogram(s)");
+    units_set.add("milliliter(s)");
+    units_set.add("liter(s)");
+
+  }
+
+  function populate(element, set) {
+    var options = '';
+    for (let item of set) {
+      options += '<option value="' + item + '" />';
+    }
+
+    element.innerHTML = options;
   }
 </script>
 
