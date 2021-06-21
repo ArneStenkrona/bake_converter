@@ -29,6 +29,15 @@
 
     input {
       margin: 5px;
+      font-family:Verdana;
+      font-size:16px;
+      color:#000000
+    }
+
+    button {
+      font-family:Verdana;
+      font-size:13px;
+      color:#000000;
     }
 
     #container { 
@@ -37,6 +46,7 @@
       background-color: #ede5ce;
       display: inline-block;
       box-shadow: 0 10px 15px #333;
+      margin: 20px;
     }
   </style>
 </head>
@@ -88,20 +98,34 @@
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     function updateResults() {
-      console.log("update");
+      if (!validInput()) {
+        return;
+      }
+
       var result_legend = document.getElementById("result_legend");
       var quantity_from = document.getElementById("quantity_from");
       var unit_from = document.getElementById("unit_from");
       var unit_to = document.getElementById("unit_to");
       var ingredient = document.getElementById("ingredient");
 
-      result_legend.innerHTML = quantity_from.value + " " + unit_from.value + " of " + ingredient.value + " is";
+
+      var unit_text_from = unit_from.value.slice(0, -3);
+      if (quantity_from.value != 1) {
+        unit_text_from = unit_text_from + "s";
+      }
+      
+      result_legend.innerHTML = quantity_from.value + " " + unit_text_from + " of " + ingredient.value + " is";
       
       var quantity_to = document.getElementById("quantity_to");
       quantity_to.value = 2.0 * parseFloat(quantity_from.value);
 
+      var unit_text_to = unit_to.value.slice(0, -3);
+      if (quantity_to.value != 1) {
+        unit_text_to = unit_text_to + "s";
+      }
+
       var unit_text = document.getElementById("unit_text");
-      unit_text.innerHTML = unit_to.value;
+      unit_text.innerHTML = unit_text_to;
     }
 
     function putValueBackFromPlaceholder(input) {
@@ -152,6 +176,19 @@
 
     /* Copy the text inside the text field */
     document.execCommand("copy");
+  }
+
+  function validInput() {
+    var quantity_from = document.getElementById("quantity_from");
+    var unit_from = document.getElementById("unit_from");
+    var unit_to = document.getElementById("unit_to");
+    var ingredient = document.getElementById("ingredient");
+
+    if (quantity_from.value === '') {
+      return false;
+    }
+
+    return true;
   }
 </script>
 
