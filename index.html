@@ -2,46 +2,86 @@
 <html>
 
 <head>
+  <style>
+    
+    body {
+      background-color: #fdf6e6;
+      font-family:Verdana;
+      font-size:16px;
+      color:#000000
+    }
+
+    fieldset {
+      background-color: #ffe2ba;
+      border: none;
+      border-radius: 3px;
+      display: inline-block;
+      box-shadow: 0 0 5px #333;
+    }
+
+    legend {
+      background-color: #f4b58a;
+      color: #000000;
+      padding: 5px 10px;
+      border-radius: 3px;
+      box-shadow: 0 0 3px #333;
+    }
+
+    input {
+      margin: 5px;
+    }
+
+    #container { 
+      border-radius: 5px;
+      padding: 30px 15px;
+      background-color: #ede5ce;
+      display: inline-block;
+      box-shadow: 0 10px 15px #333;
+    }
+  </style>
+</head>
 
 <body>
-  <div id="conversion">
-    <!-- <form id="my-form"> -->
-    <fieldset>
-      <legend>Convert</legend>
-      <div>
-        <datalist id="ingredients">
-          <option>flour</option>
-          <option>cacao</option>
-        </datalist>
-        <input autoComplete="on" list="ingredients" placeholder="flour" id="ingredient">
-      </div>
-      from
-      <div>
-        <input type="number" id="quantity_from" name="quantity_from_name" placeholder="1">
-        <datalist id="units_from">
-          <option>gram(s)</option>
-          <option>kilogram(s)</option>
-        </datalist>
-        <input autoComplete="on" list="units_from" placeholder="gram(s)" id=unit_from>
-      </div>
-      to
-      <div>
-        <datalist id="units_to">
-          <option>milliliter(s)</option>
-          <option>liter(s)</option>
-        </datalist>
-        <input autoComplete="on" list="units_to" placeholder="liter(s)" id=unit_to>
-      </div>
-    </fieldset>
-    <!-- </form> -->
-  </div>
-  <div id="results">
-    <fieldset>
-      <legend id=result_legend>Result</legend>
-      <input type="text" value="..." id="quantity_to" readonly>
-      <label for="quantity_to" id=unit_text>UNIT</label>
-      <button onclick="copyInput(&quot;quantity_to&quot;)">copy</button>
-    </fieldset>
+  <div id="container">
+    <div id="conversion">
+      <!-- <form id="my-form"> -->
+      <fieldset>
+        <legend>Convert</legend>
+        <div>
+          <datalist id="ingredients">
+            <option>flour</option>
+            <option>cacao</option>
+          </datalist>
+          <input autoComplete="on" list="ingredients" placeholder="flour" id="ingredient">
+        </div>
+        from
+        <div>
+          <input type="number" id="quantity_from" name="quantity_from_name" placeholder="1">
+          <datalist id="units_from">
+            <option>gram(s)</option>
+            <option>kilogram(s)</option>
+          </datalist>
+          <input autoComplete="on" list="units_from" placeholder="gram(s)" id=unit_from>
+        </div>
+        to
+        <div>
+          <datalist id="units_to">
+            <option>milliliter(s)</option>
+            <option>liter(s)</option>
+          </datalist>
+          <input autoComplete="on" list="units_to" placeholder="liter(s)" id=unit_to>
+        </div>
+      </fieldset>
+      <!-- </form> -->
+    </div>
+    <div id="results">
+      <fieldset>
+        <legend id=result_legend>Result</legend>
+        <input type="text" value="..." id="quantity_to" readonly>
+        <label for="quantity_to" id=unit_text>UNIT</label>
+        <button onclick="copyInput(&quot;quantity_to&quot;)">copy</button>
+      </fieldset>
+    </div>
   </div>
 </body>
 
@@ -55,7 +95,7 @@
       var unit_to = document.getElementById("unit_to");
       var ingredient = document.getElementById("ingredient");
 
-      result_legend.innerHTML = quantity_from.value + " " + unit_from.value + " of " + ingredient.value + " is...";
+      result_legend.innerHTML = quantity_from.value + " " + unit_from.value + " of " + ingredient.value + " is";
       
       var quantity_to = document.getElementById("quantity_to");
       quantity_to.value = 2.0 * parseFloat(quantity_from.value);
@@ -100,6 +140,8 @@
       // input.addEventListener('change', updateResults, false);
       input.addEventListener('input', updateResults, false);
     }
+
+    updateResults();
   });
 
   function copyInput(id) {
