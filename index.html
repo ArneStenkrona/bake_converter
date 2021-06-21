@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<body>
+  <div id="conversion">
+    <!-- <form id="my-form"> -->
+    <fieldset>
+      <legend>Convert</legend>
+      <div>
+        <datalist id="ingredients">
+          <option>flour</option>
+          <option>cacao</option>
+        </datalist>
+        <input autoComplete="on" list="ingredients" placeholder="flour" id="ingredient">
+      </div>
+      from
+      <div>
+        <input type="number" id="quantity_from" name="quantity_from_name" placeholder="1">
+        <datalist id="units_from">
+          <option>gram(s)</option>
+          <option>kilogram(s)</option>
+        </datalist>
+        <input autoComplete="on" list="units_from" placeholder="gram(s)" id=unit_from>
+      </div>
+      to
+      <div>
+        <datalist id="units_to">
+          <option>milliliter(s)</option>
+          <option>liter(s)</option>
+        </datalist>
+        <input autoComplete="on" list="units_to" placeholder="liter(s)" id=unit_to>
+      </div>
+    </fieldset>
+    <!-- </form> -->
+  </div>
+  <div id="results">
+    <fieldset>
+      <legend id=result_legend>Result</legend>
+      <input type="text" value="..." id="quantity_to" readonly>
+      <label for="quantity_to" id=unit_text>UNIT</label>
+      <button onclick="copyInput(&quot;quantity_to&quot;)">copy</button>
+    </fieldset>
+  </div>
+</body>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    function updateResults() {
+      console.log("update");
+      var result_legend = document.getElementById("result_legend");
+      var quantity_from = document.getElementById("quantity_from");
+      var unit_from = document.getElementById("unit_from");
+      var unit_to = document.getElementById("unit_to");
+      var ingredient = document.getElementById("ingredient");
+
+      result_legend.innerHTML = quantity_from.value + " " + unit_from.value + " of " + ingredient.value + " is...";
+      
+      var quantity_to = document.getElementById("quantity_to");
+      quantity_to.value = 2.0 * parseFloat(quantity_from.value);
+
+      var unit_text = document.getElementById("unit_text");
+      unit_text.innerHTML = unit_to.value;
+    }
+
+    function putValueBackFromPlaceholder(input) {
+      if (input.value === '') {
+        input.value = input.getAttribute('placeholder');
+        input.setAttribute('placeholder', '');
+      }
+    }
+
+    var inputs = document.getElementById('conversion').getElementsByTagName('input');
+    for (var i = 0, input; input = inputs[i++];) {
+      putValueBackFromPlaceholder(input);
+
+      if (input.type != 'number') {
+        input.addEventListener('click', function (event) {
+          var elem = event.target;
+          var inpLeft = elem.offsetLeft;
+          var inpWidth = elem.offsetWidth;
+          var clickedLeft = event.clientX;
+          var clickedInInpLeft = clickedLeft - inpLeft;
+          var arrowBtnWidth = 12;
+          if ((inpWidth - clickedInInpLeft) < arrowBtnWidth) {
+            elem.setAttribute('placeholder', elem.value);
+            elem.value = '';
+          }
+          else {
+            putValueBackFromPlaceholder(elem);
+          }
+        }, false);
+
+        input.addEventListener('mouseleave', function (event) {
+          putValueBackFromPlaceholder(event.target)
+        }, false);
+      }
+
+      // input.addEventListener('change', updateResults, false);
+      input.addEventListener('input', updateResults, false);
+    }
+  });
+
+  function copyInput(id) {
+    copyText = document.getElementById(id);
+    /* Select the text field */
+    copyText.select(); 
+    copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+    /* Copy the text inside the text field */
+    document.execCommand("copy");
+  }
+</script>
+
+</html>
