@@ -16,7 +16,7 @@
       border: none;
       border-radius: 3px;
       display: inline-block;
-      box-shadow: 0 0 5px #333;
+      box-shadow: 0 2px 5px #333;
     }
 
     legend {
@@ -24,7 +24,7 @@
       color: #000000;
       padding: 5px 10px;
       border-radius: 3px;
-      box-shadow: 0 0 3px #333;
+      box-shadow: 0 1px 3px #333;
     }
 
     input {
@@ -67,13 +67,13 @@
           <input type="number" id="quantity_from" name="quantity_from_name" placeholder="1">
           <datalist id="units_from">
           </datalist>
-          <input autoComplete="on" list="units_from" placeholder="gram(s)" id=unit_from>
+          <input autoComplete="on" list="units_from" placeholder="gram" id=unit_from>
         </div>
         to
         <div>
           <datalist id="units_to">
           </datalist>
-          <input autoComplete="on" list="units_to" placeholder="liter(s)" id=unit_to>
+          <input autoComplete="on" list="units_to" placeholder="liter" id=unit_to>
         </div>
       </fieldset>
       <!-- </form> -->
@@ -94,8 +94,8 @@
   const units_set = new Set();
   var latest_valid_quantity_from = '1';
   var latest_valid_ingredient = "flour";
-  var latest_valid_unit_from = "gram(s)";
-  var latest_valid_unit_to = "liter(s)";
+  var latest_valid_unit_from = "gram";
+  var latest_valid_unit_to = "liter";
 
   document.addEventListener("DOMContentLoaded", function () {
     initSets();
@@ -116,7 +116,7 @@
       var ingredient = document.getElementById("ingredient");
 
 
-      var unit_text_from = unit_from.value.slice(0, -3);
+      var unit_text_from = unit_from.value;
       if (quantity_from.value != 1) {
         unit_text_from = unit_text_from + "s";
       }
@@ -126,7 +126,7 @@
       var quantity_to = document.getElementById("quantity_to");
       quantity_to.value = 2.0 * parseFloat(quantity_from.value);
 
-      var unit_text_to = unit_to.value.slice(0, -3);
+      var unit_text_to = unit_to.value;
       if (quantity_to.value != 1) {
         unit_text_to = unit_text_to + "s";
       }
@@ -149,18 +149,10 @@
       if (input.type != 'number') {
         input.addEventListener('click', function (event) {
           var elem = event.target;
-          var inpLeft = elem.offsetLeft;
-          var inpWidth = elem.offsetWidth;
-          var clickedLeft = event.clientX;
-          var clickedInInpLeft = clickedLeft - inpLeft;
-          var arrowBtnWidth = 12;
-          if ((inpWidth - clickedInInpLeft) < arrowBtnWidth) {
-            elem.setAttribute('placeholder', elem.value);
-            elem.value = '';
-          }
-          else {
-            putValueBackFromPlaceholder(elem);
-          }
+
+          elem.setAttribute('placeholder', elem.value);
+          elem.value = '';
+
         }, false);
 
         input.addEventListener('mouseleave', function (event) {
@@ -250,10 +242,10 @@
     ingredients_set.add("flour");
     ingredients_set.add("cacao");
 
-    units_set.add("gram(s)");
-    units_set.add("kilogram(s)");
-    units_set.add("milliliter(s)");
-    units_set.add("liter(s)");
+    units_set.add("gram");
+    units_set.add("kilogram");
+    units_set.add("milliliter");
+    units_set.add("liter");
 
   }
 
