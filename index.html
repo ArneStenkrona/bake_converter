@@ -116,7 +116,6 @@
       var unit_to = document.getElementById("unit_to");
       var ingredient = document.getElementById("ingredient");
 
-
       var unit_text_from = unit_from.value;
       if (quantity_from.value != 1) {
         unit_text_from = unit_text_from + "s";
@@ -148,20 +147,20 @@
       putValueBackFromPlaceholder(input);
 
       if (input.type != 'number') {
-        input.addEventListener('click', function (event) {
+        input.addEventListener('mousedown', function (event) {
           var elem = event.target;
 
           elem.setAttribute('placeholder', elem.value);
           elem.value = '';
 
-        }, false);
+        }, true);
 
         input.addEventListener('mouseleave', function (event) {
           putValueBackFromPlaceholder(event.target)
-        }, false);
+        }, true);
       }
 
-      input.addEventListener('input', updateResults, false);
+      input.addEventListener('input', updateResults, true);
     }
 
     updateResults();
@@ -193,7 +192,7 @@
       if (!ingredients_set.has(ingredient.value)) {
         ingredient.value = latest_valid_ingredient;
       }
-    }, false);
+    }, true);
   });
 
   function copyInput(id) {
