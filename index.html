@@ -20,6 +20,16 @@
       box-shadow: 0 2px 5px #333;
     }
 
+    .unit {
+      margin: 5px;
+      background-color: #f4b58a;
+      color: #000000; 
+      padding-left: 5px;
+      padding-right: 5px;
+      border-radius: 3px;
+      box-shadow: 0 1px 3px #333;
+    }
+
     .section {
       margin: 5px;
       background-color: #f4b58a;
@@ -96,7 +106,7 @@
       <fieldset>
         <legend id=result_legend>Result</legend>
         <input type="text" value="..." id="quantity_to" readonly style="font-size:20px;text-align:right">
-        <label for="quantity_to" id=unit_text>UNIT</label>
+        <label class="unit" for="quantity_to" id=unit_text>UNIT</label>
         <button onclick="copyInput(&quot;quantity_to&quot;)">copy</button>
       </fieldset>
     </div>
