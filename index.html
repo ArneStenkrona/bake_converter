@@ -20,6 +20,15 @@
       box-shadow: 0 2px 5px #333;
     }
 
+    .section {
+      margin: 5px;
+      background-color: #f4b58a;
+      color: #000000; 
+      padding: 5px 10px;
+      border-radius: 3px;
+      box-shadow: 0 1px 3px #333;
+    }
+
     legend {
       background-color: #f4b58a;
       color: #000000;
@@ -57,32 +66,36 @@
     <div id="conversion">
       <!-- <form id="my-form"> -->
       <fieldset>
-        <legend>convert measurements</legend>
+        <legend>convert ingredient</legend>
         <div>
           🧂🥚🥛<datalist id="ingredients">
           </datalist>
-          <input autoComplete="on" list="ingredients" placeholder="flour" id="ingredient">
+          <input autoComplete="on" list="ingredients" placeholder="all purpose flour" id="ingredient">
         </div>
-        from
-        <div>
-          🔢<input type="number" id="quantity_from" name="quantity_from_name" placeholder="1">
-          📏<datalist id="units_from">
-          </datalist>
-          <input autoComplete="on" list="units_from" placeholder="gram" id=unit_from>
-        </div>
+        <div class="section">
+            
+          <div>
+            🔢<input type="number" id="quantity_from" name="quantity_from_name" placeholder="1">
+            📏<datalist id="units_from">
+            </datalist>
+            <input autoComplete="on" list="units_from" placeholder="gram" id=unit_from>
+          </div>
+      </div>
+      <div class="section">
         to
         <div>
           📏<datalist id="units_to">
           </datalist>
           <input autoComplete="on" list="units_to" placeholder="liter" id=unit_to>
         </div>
+      </div>
       </fieldset>
       <!-- </form> -->
     </div>
     <div id="results">
       <fieldset>
         <legend id=result_legend>Result</legend>
-        <input type="text" value="..." id="quantity_to" readonly>
+        <input type="text" value="..." id="quantity_to" readonly style="font-size:20px;text-align:right">
         <label for="quantity_to" id=unit_text>UNIT</label>
         <button onclick="copyInput(&quot;quantity_to&quot;)">copy</button>
       </fieldset>
@@ -91,8 +104,15 @@
 </body>
 
 <script>
+  /* densities, g/ml */
+  const ingredients_densities = new Map();
+
+  const mass_in_grams = new Map();
+  const volume_in_ml = new Map();
+
   const ingredients_set = new Set();
   const units_set = new Set();
+
   var latest_valid_quantity_from = '1';
   var latest_valid_ingredient = "flour";
   var latest_valid_unit_from = "gram";
@@ -124,7 +144,11 @@
       result_legend.innerHTML = quantity_from.value + " " + unit_text_from + " of " + ingredient.value + " is";
       
       var quantity_to = document.getElementById("quantity_to");
-      quantity_to.value = 2.0 * parseFloat(quantity_from.value);
+      
+      var quantity = convert(ingredient.value, unit_from.value, unit_to.value, parseFloat(quantity_from.value));
+      var quantity_string = +quantity.toFixed(3);
+      
+      quantity_to.value = quantity_string;
 
       var unit_text_to = unit_to.value;
       if (quantity_to.value != 1) {
@@ -239,14 +263,43 @@
   }
 
   function initSets() {
-    ingredients_set.add("flour");
-    ingredients_set.add("cacao");
+    ingredients_densities.set("all purpose flour", 0.67);
+    ingredients_densities.set("olive oil", 0.918);
 
-    units_set.add("gram");
-    units_set.add("kilogram");
-    units_set.add("milliliter");
-    units_set.add("liter");
+    for (let key of ingredients_densities.keys()) {
+      ingredients_set.add(key);
+    }
 
+    mass_in_grams.set("gram", 1);
+    mass_in_grams.set("ounce", 28.3495);
+    mass_in_grams.set("pound", 453.592);
+    mass_in_grams.set("kilogram", 1000);
+
+    volume_in_ml.set("milliliter", 1);
+    volume_in_ml.set("centiliter", 10);
+    volume_in_ml.set("deciliter", 100);
+    volume_in_ml.set("liter", 1000);
+    volume_in_ml.set("US gallon", 3785.41);
+    volume_in_ml.set("US quart", 946.353);  
+    volume_in_ml.set("US pint", 473.176);
+    volume_in_ml.set("US cup", 240);
+    volume_in_ml.set("US fluid ounce", 29.5735);
+    volume_in_ml.set("tablespoon", 15);
+    volume_in_ml.set("teaspoon", 5);
+    volume_in_ml.set("imperial gallon", 4546.09);
+    volume_in_ml.set("imperial quart", 1136.52);
+    volume_in_ml.set("imperial pint", 568.261);
+    volume_in_ml.set("imperial cup", 284.131);
+    volume_in_ml.set("imperial fluid ounce", 28.4131);
+
+    for (let key of mass_in_grams.keys()) {
+      console.log("hej");
+      units_set.add(key);
+    }
+
+    for (let key of volume_in_ml.keys()) {
+      units_set.add(key);
+    }
   }
 
   function populate(element, set) {
@@ -256,6 +309,36 @@
     }
 
     element.innerHTML = options;
+  }
+
+  function convert(ingredient, unit_from, unit_to, quantity) {
+    var density = ingredients_densities.get(ingredient);
+
+    if(mass_in_grams.has(unit_to)) {
+      if (mass_in_grams.has(unit_from)) {
+        var from_g = mass_in_grams.get(unit_from);
+        var to_g = mass_in_grams.get(unit_to);
+
+        return quantity * (from_g / to_g);
+      } else {
+        var from_g = volume_in_ml.get(unit_from) * density;
+        var to_g = mass_in_grams.get(unit_to);
+
+        return quantity * (from_g / to_g);
+      }
+    } else {
+      if (mass_in_grams.has(unit_from)) {
+        var from_ml = mass_in_grams.get(unit_from) / density;
+        var to_ml = volume_in_ml.get(unit_to);
+
+        return quantity * (from_ml / to_ml);
+      } else {
+        var from_ml = volume_in_ml.get(unit_from);
+        var to_ml = volume_in_ml.get(unit_to);
+
+        return quantity * (from_ml / to_ml);
+      }
+    }
   }
 </script>
 
