@@ -80,7 +80,7 @@
         <div>
           🧂🥚🥛<datalist id="ingredients">
           </datalist>
-          <input autoComplete="on" list="ingredients" placeholder="all purpose flour" id="ingredient">
+          <input autoComplete="on" list="ingredients" placeholder="all purpose flour" id="ingredient">🔍
         </div>
         <div class="section">
             
@@ -104,9 +104,9 @@
     </div>
     <div id="results">
       <fieldset>
-        <legend id=result_legend>Result</legend>
+        <legend id=result_legend>...</legend>
         <input type="text" value="..." id="quantity_to" readonly style="font-size:20px;text-align:right">
-        <label class="unit" for="quantity_to" id=unit_text>UNIT</label>
+        <label class="unit" for="quantity_to" id=unit_text></label>
         <button onclick="copyInput(&quot;quantity_to&quot;)">copy</button>
       </fieldset>
     </div>
@@ -124,7 +124,7 @@
   const units_set = new Set();
 
   var latest_valid_quantity_from = '1';
-  var latest_valid_ingredient = "flour";
+  var latest_valid_ingredient = "all purpose flour";
   var latest_valid_unit_from = "gram";
   var latest_valid_unit_to = "liter";
 
@@ -301,9 +301,9 @@
     mass_in_grams.set("pound", 453.592);
     mass_in_grams.set("kilogram", 1000);
 
-    volume_in_ml.set("milliliter", 1);
-    volume_in_ml.set("centiliter", 10);
-    volume_in_ml.set("deciliter", 100);
+    volume_in_ml.set("ml", 1);
+    volume_in_ml.set("cl", 10);
+    volume_in_ml.set("dl", 100);
     volume_in_ml.set("liter", 1000);
     volume_in_ml.set("US gallon", 3785.41);
     volume_in_ml.set("US quart", 946.353);  

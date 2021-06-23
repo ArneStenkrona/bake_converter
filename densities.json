@@ -13,14 +13,14 @@
   },
   {
     "ingredient": "Milk",
-    "density": ""
+    "density": "1.0"
   },
   {
-    "ingredient": "Milk (powdered whole)",
+    "ingredient": "Powdered whole Milk",
     "density": "0.56"
   },
   {
-    "ingredient": "Milk (powdered)",
+    "ingredient": "Powdered milk",
     "density": "0.21"
   },
   {
@@ -800,7 +800,7 @@
     "density": "0.09"
   },
   {
-    "ingredient": "Glucose (at 15.6 C)",
+    "ingredient": "Glucose",
     "density": "0.4"
   },
   {
