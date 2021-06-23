@@ -129,6 +129,25 @@
   var latest_valid_unit_to = "liter";
 
   document.addEventListener("DOMContentLoaded", function () {
+    const myHeaders = new Headers();
+
+    const myRequest = new Request('densities.json', {
+      method: 'GET',
+      headers: myHeaders,
+      mode: 'cors',
+      cache: 'default',
+    });
+
+    fetch(myRequest)
+      .then(response => response.json())
+      .then(data => {
+        for (let i = 0; i < data.length; i++) {
+          ingredients_densities.set(data[i].ingredient.toLowerCase(), parseFloat(data[i].density));
+        }
+      }).then(() => init());
+  });
+
+  function init() {
     initSets();
 
     populate(document.getElementById("units_from"), units_set);
@@ -227,7 +246,7 @@
         ingredient.value = latest_valid_ingredient;
       }
     }, true);
-  });
+  }
 
   function copyInput(id) {
     copyText = document.getElementById(id);
@@ -273,11 +292,8 @@
   }
 
   function initSets() {
-    ingredients_densities.set("all purpose flour", 0.67);
-    ingredients_densities.set("olive oil", 0.918);
-
     for (let key of ingredients_densities.keys()) {
-      ingredients_set.add(key);
+        ingredients_set.add(key);
     }
 
     mass_in_grams.set("gram", 1);
@@ -303,7 +319,6 @@
     volume_in_ml.set("imperial fluid ounce", 28.4131);
 
     for (let key of mass_in_grams.keys()) {
-      console.log("hej");
       units_set.add(key);
     }
 
