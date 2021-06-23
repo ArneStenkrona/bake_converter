@@ -4,12 +4,108 @@
 <head>
   <meta charset="UTF-8">
   <style>
-    
+    /* responsive start */
+    * {
+      box-sizing: border-box;
+    }
+
+    .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+    [class*="col-"] {
+      float: left;
+      padding: 15px;
+    }
+
+    html {
+      font-family: "Lucida Sans", sans-serif;
+    }
+
+    .header {
+      background-color: #9933cc;
+      color: #ffffff;
+      padding: 15px;
+    }
+
+    .menu ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .menu li {
+      background-color: #e2c3ae;
+      margin: 2px;
+      border-radius: 10px;
+    }
+
+    .menu li:hover {
+      background-color: #0099cc;
+    }
+
+    .aside {
+      background-color: #33b5e5;
+      padding: 15px;
+      color: #ffffff;
+      text-align: center;
+      font-size: 14px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    }
+
+    .footer {
+      color: #000000;
+      background-color: #0099cc;
+      text-align: center;
+      font-size: 12px;
+      padding: 15px;
+    }
+
+    a:link, a:visited {
+      color: #000000;
+      font-weight: bold;
+      padding: 14px 25px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      border-radius: 10px;
+    }
+
+    a:hover, a:active {
+      color: #ffffff;
+    }
+
+    .menu li { padding: 0px; }
+    .menu li a { margin: 0px; display: block; width: 100%; height: 100%; }
+
+    /* For mobile phones: */
+    [class*="col-"] {
+      width: 100%;
+    }
+
+    @media only screen and (min-width: 768px) {
+      /* For desktop: */
+      .col-1 {width: 8.33%;}
+      .col-2 {width: 16.66%;}
+      .col-3 {width: 25%;}
+      .col-4 {width: 33.33%;}
+      .col-5 {width: 41.66%;}
+      .col-6 {width: 50%;}
+      .col-7 {width: 58.33%;}
+      .col-8 {width: 66.66%;}
+      .col-9 {width: 75%;}
+      .col-10 {width: 83.33%;}
+      .col-11 {width: 91.66%;}
+      .col-12 {width: 100%;}
+    }
+    /* responsive end */
     body {
       background-color: #fdf6e6;
       font-family:Verdana;
       font-size:20px;
-      color:#000000
+      color:#000000;
     }
 
     fieldset {
@@ -34,7 +130,7 @@
       margin: 5px;
       background-color: #f4b58a;
       color: #000000; 
-      padding: 5px 10px;
+      padding: 5px 5px;
       border-radius: 3px;
       box-shadow: 0 1px 3px #333;
     }
@@ -42,7 +138,7 @@
     legend {
       background-color: #f4b58a;
       color: #000000;
-      padding: 5px 10px;
+      padding: 5px 5px;
       border-radius: 3px;
       box-shadow: 0 1px 3px #333;
     }
@@ -61,54 +157,64 @@
     }
 
     #container { 
+      max-width: 600px;
       border-radius: 5px;
       padding: 30px 15px;
       background-color: #ede5ce;
       display: inline-block;
       box-shadow: 0 10px 15px #333;
-      margin: 20px;
+      margin: 0px;
     }
   </style>
 </head>
 
 <body>
-  <div id="container">
-    <div id="conversion">
-      <!-- <form id="my-form"> -->
-      <fieldset>
-        <legend>convert ingredient</legend>
-        <div>
-          🧂🥚🥛<datalist id="ingredients">
-          </datalist>
-          <input autoComplete="on" list="ingredients" placeholder="all purpose flour" id="ingredient">🔍
+  <div class="row">
+    <div id="container" class="col-6">
+      <div id="conversion">
+        <!-- <form id="my-form"> -->
+        <fieldset>
+          <legend>convert ingredient</legend>
+          <div>
+            🧂🥚🥛<datalist id="ingredients">
+            </datalist>
+            <input autoComplete="on" list="ingredients" placeholder="all purpose flour" id="ingredient">🔍
+          </div>
+          <div class="section">
+            from
+            <div>
+              🔢<input type="number" id="quantity_from" name="quantity_from_name" placeholder="1" min="0">
+              📏<datalist id="units_from">
+              </datalist>
+              <input autoComplete="on" list="units_from" placeholder="gram" id=unit_from>
+            </div>
         </div>
         <div class="section">
-            
+          to
           <div>
-            🔢<input type="number" id="quantity_from" name="quantity_from_name" placeholder="1">
-            📏<datalist id="units_from">
+            📏<datalist id="units_to">
             </datalist>
-            <input autoComplete="on" list="units_from" placeholder="gram" id=unit_from>
+            <input autoComplete="on" list="units_to" placeholder="liter" id=unit_to>
           </div>
-      </div>
-      <div class="section">
-        to
-        <div>
-          📏<datalist id="units_to">
-          </datalist>
-          <input autoComplete="on" list="units_to" placeholder="liter" id=unit_to>
         </div>
+        </fieldset>
+        <!-- </form> -->
       </div>
-      </fieldset>
-      <!-- </form> -->
+      <div id="results">
+        <fieldset>
+          <legend id=result_legend>...</legend>
+          <input type="text" value="..." id="quantity_to" readonly style="font-size:20px;text-align:right">
+          <label class="unit" for="quantity_to" id=unit_text></label>
+          <button onclick="copyInput(&quot;quantity_to&quot;)">copy</button>
+        </fieldset>
+      </div>
     </div>
-    <div id="results">
-      <fieldset>
-        <legend id=result_legend>...</legend>
-        <input type="text" value="..." id="quantity_to" readonly style="font-size:20px;text-align:right">
-        <label class="unit" for="quantity_to" id=unit_text></label>
-        <button onclick="copyInput(&quot;quantity_to&quot;)">copy</button>
-      </fieldset>
+    <div class="col-3 menu">
+      <ul>
+        <li><a href="index.html">weight and volume converter</a></li>
+        <li><a href="index.html">temperature converter</a></li>
+        <li><a href="index.html">about this site</a></li>
+      </ul>
     </div>
   </div>
 </body>
@@ -227,6 +333,7 @@
       if (quantity_from.value === '') {
         quantity_from.value = latest_valid_quantity_from;
       }
+      quantity_from.value = Math.abs(quantity_from.value);
     }, false);
 
     unit_from.addEventListener('blur', function (event) {
@@ -269,6 +376,7 @@
     if (quantity_from.value === '') {
       ret = false;
     } else {
+      quantity_from.value = Math.abs(quantity_from.value);
       latest_valid_quantity_from = quantity_from.value;
     }
 
@@ -301,9 +409,9 @@
     mass_in_grams.set("pound", 453.592);
     mass_in_grams.set("kilogram", 1000);
 
-    volume_in_ml.set("ml", 1);
-    volume_in_ml.set("cl", 10);
-    volume_in_ml.set("dl", 100);
+    volume_in_ml.set("milliliter", 1);
+    volume_in_ml.set("centiliter", 10);
+    volume_in_ml.set("deciliter", 100);
     volume_in_ml.set("liter", 1000);
     volume_in_ml.set("US gallon", 3785.41);
     volume_in_ml.set("US quart", 946.353);  
