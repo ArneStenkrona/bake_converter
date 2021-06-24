@@ -162,7 +162,8 @@
       padding: 30px 15px;
       background-color: #ede5ce;
       display: inline-block;
-      box-shadow: 0 10px 15px #333;
+      /* box-shadow: 0 10px 15px #333; */
+      box-shadow: 0 2px 4px #666;
       margin: 0px;
     }
   </style>
@@ -178,7 +179,8 @@
           <div>
             🧂🥚🥛<datalist id="ingredients">
             </datalist>
-            <input autoComplete="on" list="ingredients" placeholder="all purpose flour" id="ingredient">🔍
+            <input autoComplete="on" name="ingredient_input" list="ingredients" placeholder="all purpose flour" id="ingredient">
+            <!-- 🔍 -->
           </div>
           <div class="section">
             from
@@ -333,7 +335,6 @@
       if (quantity_from.value === '') {
         quantity_from.value = latest_valid_quantity_from;
       }
-      quantity_from.value = Math.abs(quantity_from.value);
     }, false);
 
     unit_from.addEventListener('blur', function (event) {
@@ -376,7 +377,6 @@
     if (quantity_from.value === '') {
       ret = false;
     } else {
-      quantity_from.value = Math.abs(quantity_from.value);
       latest_valid_quantity_from = quantity_from.value;
     }
 
