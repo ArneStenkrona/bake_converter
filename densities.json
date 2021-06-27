@@ -1,5 +1,17 @@
 [
   {
+    "ingredient": "Active dry yeast",
+    "density": "0.575"
+  },
+  {
+    "ingredient": "Baking soda",
+    "density": "0.689"
+  },
+  {
+    "ingredient": "Vanilla extract",
+    "density": "0.88"
+  },
+  {
     "ingredient": "Coffee powder",
     "density": "0.365"
   },
