@@ -31,7 +31,8 @@ padding: 0;
 }
 
 .menu li {
-background-color: #e2c3ae;
+background-color: #edc7b7;
+font-weight: bold;
 margin: 2px;
 border-radius: 10px;
 }
@@ -58,7 +59,7 @@ padding: 15px;
 }
 
 a:link, a:visited {
-color: #000000;
+color: #29221f;
 font-weight: bold;
 padding: 14px 25px;
 text-align: center;
@@ -96,48 +97,52 @@ width: 100%;
 }
 /* responsive end */
 body {
-background-color: #fdf6e6;
+background-color: #ffffff;
 font-family:Verdana;
 font-size:20px;
 color:#000000;
+font-weight: bold;
 }
 
 fieldset {
-background-color: #ffe2ba;
+background-color: #edc7b7;
 border: none;
 border-radius: 3px;
 display: inline-block;
-box-shadow: 0 2px 5px #333;
+box-shadow: 0 0px 2px #333;
+border-top: 10px solid #ac3b61;
 }
 
 .unit {
 margin: 5px;
-background-color: #f4b58a;
-color: #000000; 
+background-color: #b8cde4;
+color: #123c69; 
 padding-left: 5px;
 padding-right: 5px;
 border-radius: 3px;
-box-shadow: 0 1px 3px #333;
+box-shadow: 0 0px 2px #333;
+font-weight: bold;
 }
 
 .section {
 margin: 5px;
-background-color: #f4b58a;
-color: #000000; 
+background-color: #b8cde4;
+color: #123c69; 
 padding: 5px 5px;
 border-radius: 3px;
-box-shadow: 0 1px 3px #333;
+box-shadow: 0 0px 2px #333;
+font-weight: bold;
 }
 
 legend {
-background-color: #f4b58a;
-color: #000000;
+background-color: #ac3b61;
+color: #eedde3;
 padding: 5px 5px;
 border-radius: 3px;
-box-shadow: 0 1px 3px #333;
+font-weight: bold;
 }
 
-input {
+input { 
 margin: 5px;
 font-family:Verdana;
 font-size:16px;
@@ -154,9 +159,8 @@ color:#000000;
 max-width: 600px;
 border-radius: 5px;
 padding: 30px 15px;
-background-color: #ede5ce;
+background-color: #eee2dc;
 display: inline-block;
 /* box-shadow: 0 10px 15px #333; */
-box-shadow: 0 2px 4px #666;
-margin: 0px;
+margin: auto;
 }
