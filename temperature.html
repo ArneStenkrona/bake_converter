@@ -2,55 +2,63 @@
 <html>
 
 <head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="main.css">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
-  <div class="row">
-    <div class="col-6 container">
-      <div id="conversion">
-        <!-- <form id="my-form"> -->
-        <fieldset style="width: 100%;">
-          <legend>convert temperature</legend>
-          <div class="section">
-            celsius
-            <div>
-              🌡️<input type="number" id="quantity_from" name="quantity_from_name" placeholder="1" min="0">
+    <div class="row">
+        <div class="col-6 container">
+            <div id="conversion">
+                <!-- <form id="my-form"> -->
+                <fieldset style="width: 100%;">
+                    <legend>convert temperature</legend>
+                    <div class="section">
+                        celsius
+                        <div>
+                            🌡️<input type="number" id="quantity_from" name="quantity_from_name" placeholder="1"
+                                min="0">
+                        </div>
+                    </div>
+                    <div class="section">
+                        fahrenheit
+                        <div>
+                            🌡️<input type="number" id="quantity_from" name="quantity_from_name" placeholder="1"
+                                min="0">
+                        </div>
+                    </div>
+                </fieldset>
+                <!-- </form> -->
             </div>
         </div>
-        <div class="section">
-          fahrenheit
-          <div>
-            🌡️<input type="number" id="quantity_from" name="quantity_from_name" placeholder="1" min="0">
-          </div>
+        <div class="col-3 container">
+            <div class="menu">
+                <ul>
+                    <li><a href="index.html">weight and volume converter</a></li>
+                    <li><a href="temperature.html">temperature converter</a></li>
+                    <li><a href="about.html">about this site</a></li>
+                </ul>
+            </div>
+            <br>
+            <fieldset class="presets">
+                <legend>common conversions</legend>
+                <ul>
+                    <li><a href="index.html?ingredient=flour&from=gram&to=deciliter">convert flour grams to dl</a></li>
+                    <li><a href="index.html?ingredient=sugar&from=kg&to=cup">convert sugar kg to cups</a></li>
+                    <li><a href="index.html?ingredient=baking powder&from=gram&to=ounce">convert baking powder grams to
+                            oz</a></li>
+                    <li><a href="index.html?ingredient=vanilla extract&from=gram&to=US fluid ounce">convert vanilla
+                            extract grams to
+                            fl oz</a></li>
+                    <li><a href="index.html?ingredient=table salt&from=ounce&to=teaspoon">convert salt oz to
+                            teaspoons</a></li>
+                </ul>
+            </fieldset>
         </div>
-        </fieldset>
-        <!-- </form> -->
-      </div>
     </div>
-    <div class="col-3 container">
-        <div class="menu">
-          <ul>
-            <li><a href="index.html">weight and volume converter</a></li>
-            <li><a href="temperature.html">temperature converter</a></li>
-            <li><a href="about.html">about this site</a></li>
-          </ul>
-        </div>
-        <br>
-        <fieldset class="presets">
-          <legend>common conversions</legend>
-          <ul>
-            <li><a href="index.html?ingredient=flour&from=gram&to=deciliter">convert flour grams to dl</a></li>
-            <li><a href="index.html?ingredient=sugar&from=kg&to=cup">convert sugar kg to cups</a></li>
-            <li><a href="index.html?ingredient=baking powder&from=gram&to=ounce">convert baking powder grams to oz</a></li>
-            <li><a href="index.html?ingredient=vanilla extract&from=gram&to=US fluid ounce">convert vanilla extract grams to
-                fl oz</a></li>
-            <li><a href="index.html?ingredient=table salt&from=ounce&to=teaspoon">convert salt oz to teaspoons</a></li>
-          </ul>
-        </fieldset>
-      </div>
-  </div>
+    <div class="footer">
+        <p>© 2021 Arne Stenkrona, all rights reserved</p>
+    </div>
 </body>
 
 <script src="temperature.js"></script>
