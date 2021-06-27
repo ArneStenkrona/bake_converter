@@ -2,75 +2,84 @@
 <html>
 
 <head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="main.css">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
-  <div class="row">
-    <div class="col-6 container">
-      <div id="conversion">
-        <!-- <form id="my-form"> -->
-        <fieldset>
-          <legend>convert ingredient</legend>
-          <div class="section">
-            🧂🥚🥛<datalist id="ingredients">
-            </datalist>
-            <input autoComplete="on" name="ingredient_input" list="ingredients" placeholder="all purpose flour" id="ingredient">
-            <!-- 🔍 -->
-          </div>
-          <div class="section">
-            from
-            <div>
-              🔢<input type="number" id="quantity_from" name="quantity_from_name" placeholder="1" min="0">
-              📏<datalist id="units_from">
-              </datalist>
-              <input autoComplete="on" list="units_from" placeholder="gram" id=unit_from>
+    <div class="row">
+        <div class="col-6 container">
+            <div id="conversion">
+                <!-- <form id="my-form"> -->
+                <fieldset>
+                    <legend>convert ingredient</legend>
+                    <div class="section">
+                        🧂🥚🥛<datalist id="ingredients">
+                        </datalist>
+                        <input autoComplete="on" name="ingredient_input" list="ingredients"
+                            placeholder="all purpose flour" id="ingredient">
+                        <!-- 🔍 -->
+                    </div>
+                    <div class="section">
+                        from
+                        <div>
+                            🔢<input type="number" id="quantity_from" name="quantity_from_name" placeholder="1" min="0">
+                            📏<datalist id="units_from">
+                            </datalist>
+                            <input autoComplete="on" list="units_from" placeholder="gram" id=unit_from>
+                        </div>
+                    </div>
+                    <div class="section">
+                        to
+                        <div>
+                            📏<datalist id="units_to">
+                            </datalist>
+                            <input autoComplete="on" list="units_to" placeholder="liter" id=unit_to>
+                        </div>
+                    </div>
+                </fieldset>
+                <!-- </form> -->
+            </div>
+            <div id="results">
+                <fieldset>
+                    <legend id=result_legend>...</legend>
+                    <div class="section">
+                        <button style="font-size: 20px;" onclick="flipUnits(&quot;quantity_to&quot;)">🔄</button>
+                        <input type="text" value="..." id="quantity_to" readonly
+                            style="font-size:20px;text-align:right;max-width: 100px;">
+                        <label class="unit" for="quantity_to" id=unit_text></label>
+                        <button onclick="copyInput(&quot;quantity_to&quot;)">copy</button>
+                    </div>
+                </fieldset>
             </div>
         </div>
-        <div class="section">
-          to
-          <div>
-            📏<datalist id="units_to">
-            </datalist>
-            <input autoComplete="on" list="units_to" placeholder="liter" id=unit_to>
-          </div>
+        <div class="col-3 container">
+            <div class="menu">
+                <ul>
+                    <li><a href="index.html">weight and volume converter</a></li>
+                    <li><a href="temperature.html">temperature converter</a></li>
+                    <li><a href="about.html">about this site</a></li>
+                </ul>
+            </div>
+            <br>
+            <fieldset class="presets">
+                <legend>common conversions</legend>
+                <ul>
+                    <li><a href="index.html?ingredient=flour&from=gram&to=deciliter">convert flour grams to dl</a></li>
+                    <li><a href="index.html?ingredient=sugar&from=kg&to=cup">convert sugar kg to cups</a></li>
+                    <li><a href="index.html?ingredient=baking powder&from=gram&to=ounce">convert baking powder grams to
+                            oz</a>
+                    </li>
+                    <li><a href="index.html?ingredient=vanilla extract&from=gram&to=US fluid ounce">convert vanilla
+                            extract grams
+                            to
+                            fl oz</a></li>
+                    <li><a href="index.html?ingredient=table salt&from=ounce&to=teaspoon">convert salt oz to
+                            teaspoons</a></li>
+                </ul>
+            </fieldset>
         </div>
-        </fieldset>
-        <!-- </form> -->
-      </div>
-      <div id="results">
-        <fieldset>
-          <legend id=result_legend>...</legend>
-          <button style="font-size: 20px;" onclick="flipUnits(&quot;quantity_to&quot;)">🔄</button>
-          <input type="text" value="..." id="quantity_to" readonly style="font-size:20px;text-align:right;max-width: 100px;">
-          <label class="unit" for="quantity_to" id=unit_text></label>
-          <button onclick="copyInput(&quot;quantity_to&quot;)">copy</button>
-        </fieldset>
-      </div>
     </div>
-    <div class="col-3 container">
-      <div class="menu">
-        <ul>
-          <li><a href="index.html">weight and volume converter</a></li>
-          <li><a href="temperature.html">temperature converter</a></li>
-          <li><a href="about.html">about this site</a></li>
-        </ul>
-      </div>
-      <br>
-      <fieldset class="presets">
-        <legend>common conversions</legend>
-        <ul>
-          <li><a href="index.html?ingredient=flour&from=gram&to=deciliter">convert flour grams to dl</a></li>
-          <li><a href="index.html?ingredient=sugar&from=kg&to=cup">convert sugar kg to cups</a></li>
-          <li><a href="index.html?ingredient=baking powder&from=gram&to=ounce">convert baking powder grams to oz</a></li>
-          <li><a href="index.html?ingredient=vanilla extract&from=gram&to=US fluid ounce">convert vanilla extract grams to
-              fl oz</a></li>
-          <li><a href="index.html?ingredient=table salt&from=ounce&to=teaspoon">convert salt oz to teaspoons</a></li>
-        </ul>
-      </fieldset>
-    </div>
-  </div>
 </body>
 
 <script src="ingredients.js"></script>
