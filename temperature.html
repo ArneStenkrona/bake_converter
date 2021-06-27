@@ -12,28 +12,26 @@
       <div id="conversion">
         <!-- <form id="my-form"> -->
         <fieldset>
-          <legend>convert ingredient</legend>
-          <div>
-            🧂🥚🥛<datalist id="ingredients">
-            </datalist>
-            <input autoComplete="on" name="ingredient_input" list="ingredients" placeholder="all purpose flour" id="ingredient">
-            <!-- 🔍 -->
-          </div>
+          <legend>convert temperature</legend>
           <div class="section">
             from
             <div>
-              🔢<input type="number" id="quantity_from" name="quantity_from_name" placeholder="1" min="0">
-              📏<datalist id="units_from">
+              🌡️<input type="number" id="quantity_from" name="quantity_from_name" placeholder="1" min="0">
+              📏<datalist id="degrees_units_from">
+                  <option>celsius</option>
+                  <option>fahrenheit</option>
               </datalist>
-              <input autoComplete="on" list="units_from" placeholder="gram" id=unit_from>
+              <input autoComplete="on" list="degrees_units_from" placeholder="celsius" id=degrees_unit_from>
             </div>
         </div>
         <div class="section">
           to
           <div>
-            📏<datalist id="units_to">
+            📏<datalist id="degrees_units_to">
+                <option>celsius</option>
+                <option>fahrenheit</option>
             </datalist>
-            <input autoComplete="on" list="units_to" placeholder="liter" id=unit_to>
+            <input autoComplete="on" list="degrees_units_to" placeholder="fahrenheit" id=degrees_unit_to>
           </div>
         </div>
         </fieldset>
