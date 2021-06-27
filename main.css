@@ -87,7 +87,7 @@ color: #ffffff;
 
 .presets a:link, .menu a:visited {
 text-align: center;
-display: inline-block;
+display: inline-block;  
 border-radius: 10px;
 }
 
@@ -176,7 +176,7 @@ font-size:13px;
 color:#000000;
 }
 
-#container { 
+.container { 
 max-width: 600px;
 border-radius: 5px;
 padding: 30px 15px;

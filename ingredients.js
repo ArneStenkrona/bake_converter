@@ -130,6 +130,20 @@ function init() {
       ingredient.value = latest_valid_ingredient;
     }
   }, true);
+
+  var paramIngredient = getParameterByName("ingredient");
+  var paramUnitFrom = getParameterByName("from");
+  var paramUnitTo = getParameterByName("to");
+  if (paramIngredient != null) {
+    ingredient.value = paramIngredient;
+  }
+  if (paramUnitFrom != null) {
+    unit_from.value = paramUnitFrom; 
+  }
+  if (paramUnitTo != null) {
+    unit_to.value = paramUnitTo;
+  }
+  updateResults();
 }
 
 function copyInput(id) {
@@ -262,4 +276,23 @@ function flipUnits() {
   quantity_from.value = quantity_to.value;
 
   updateResults();
+}
+
+function preset(ingredient,from,to) {
+    var ingred = document.getElementById("ingredient");
+    var unit_from = document.getElementById("unit_from");
+    var unit_to = document.getElementById("unit_to");
+
+    ingred.value = ingredient
+    unit_from.value = from;
+    unit_to.value = to;
+}
+
+function getParameterByName(name, url = window.location.href) {
+    name = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }

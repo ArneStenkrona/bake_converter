@@ -2,32 +2,58 @@
 <html>
 
 <head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="main.css">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
-  <div class="row">
-    <fieldset class="col-6">
-        <legend>About</legend>
-      <b>
-          This is a simple web app for baking unit conversion. I've made it with the intent of being as simple as possible with no unnecessary distractions. 
-        <br>
-        <br>
-        While many sites with the same purpose exists, I've personally found them cumbersome to use with needlessly many subpages. I often find myself having to navigate to a volume to weight section only to backtrack once I need weight to volume. And if I suddenly want to convert flour instead of sugar I have to search for a completely different page. Why not just have all ingredients and units in one simple place? Baking is already challenging enough as it is!
-        <br>
-        <br>
-        If you like this site feel free to share it! Hopefully it will help you and your friends focus more on the delicious stuff you make and less on clicking through a dozen links until you find the right units to convert.
-      </b>
-    </fieldset>
-    <div class="col-3 menu">
-      <ul>
-        <li><a href="index.html">weight and volume converter</a></li>
-        <li><a href="temperature.html">temperature converter</a></li>
-        <li><a href="about.html">about this site</a></li>
-      </ul>
+    <div class="row">
+        <div class="col-6 container">
+            <fieldset>
+                <legend>About</legend>
+                <b>
+                    This is a simple web app for baking unit conversion. I've made it with the intent of being as simple
+                    as possible with no unnecessary distractions.
+                    <br>
+                    <br>
+                    While many sites with the same purpose exists, I've personally found them cumbersome to use with
+                    needlessly many subpages. I often find myself having to navigate to a volume to weight section only
+                    to backtrack once I need weight to volume. And if I suddenly want to convert flour instead of sugar
+                    I have to search for a completely different page. Why not just have all ingredients and units in one
+                    simple place? Baking is already challenging enough as it is!
+                    <br>
+                    <br>
+                    If you like this site feel free to share it! Hopefully it will help you and your friends focus more
+                    on the delicious stuff you make and less on clicking through a dozen links until you find the right
+                    units to convert.
+                </b>
+            </fieldset>
+        </div>
+        <div class="col-3 container">
+            <div class="menu">
+                <ul>
+                    <li><a href="index.html">weight and volume converter</a></li>
+                    <li><a href="temperature.html">temperature converter</a></li>
+                    <li><a href="about.html">about this site</a></li>
+                </ul>
+            </div>
+            <br>
+            <fieldset class="presets">
+                <legend>common conversions</legend>
+                <ul>
+                    <li><a href="index.html?ingredient=flour&from=gram&to=deciliter">convert flour grams to dl</a></li>
+                    <li><a href="index.html?ingredient=sugar&from=kg&to=cup">convert sugar kg to cups</a></li>
+                    <li><a href="index.html?ingredient=baking powder&from=gram&to=ounce">convert baking powder grams to
+                            oz</a></li>
+                    <li><a href="index.html?ingredient=vanilla extract&from=gram&to=US fluid ounce">convert vanilla
+                            extract grams to
+                            fl oz</a></li>
+                    <li><a href="index.html?ingredient=table salt&from=ounce&to=teaspoon">convert salt oz to
+                            teaspoons</a></li>
+                </ul>
+            </fieldset>
+        </div>
     </div>
-  </div>
 </body>
 
 </html>
