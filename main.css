@@ -162,16 +162,16 @@ border-radius: 3px;
 display: inline-block;
 box-shadow: 0 0px 2px #333;
 border-top: 10px solid #ac3b61;
+width: 100%;
 }
 
 .unit {
 margin: 5px;
-background-color: #b8cde4;
-color: #123c69; 
+background-color: #123c69;
+color: #ffffff; 
 padding-left: 5px;
 padding-right: 5px;
 border-radius: 3px;
-box-shadow: 0 0px 2px #333;
 font-weight: bold;
 }
 
