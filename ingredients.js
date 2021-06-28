@@ -165,6 +165,10 @@ function validInput() {
   var unit_to = document.getElementById("unit_to");
   var ingredient = document.getElementById("ingredient");
 
+  unit_from.value = unit_from.value.toLowerCase();
+  unit_to.value = unit_to.value.toLowerCase();
+  ingredient.value = ingredient.value.toLowerCase();
+
   var ret = true;
 
   if (quantity_from.value === '') {
