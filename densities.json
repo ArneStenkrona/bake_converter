@@ -1,5 +1,9 @@
 [
   {
+    "ingredient": "Grated coconut",
+    "density": "0.321"
+  },
+  {
     "ingredient": "Kosher salt",
     "density": "1.22"
   },
@@ -174,10 +178,6 @@
   {
     "ingredient": "Vegetable oil",
     "density": "0.9185"
-  },
-  {
-    "ingredient": "Fats and other",
-    "density": ""
   },
   {
     "ingredient": "Animal fat",
