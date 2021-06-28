@@ -19,9 +19,35 @@ font-family: "Lucida Sans", sans-serif;
 }
 
 .header {
-background-color: #9933cc;
-color: #ffffff;
-padding: 15px;
+margin: 5px;
+text-align: left;
+color: #123c69; 
+font-weight: bold;
+}
+
+.header a {
+color: #123c69; 
+font-weight: bold;
+padding: 14px 25px;
+text-decoration: none;
+display: inline-block;
+border-radius: 10px;
+}
+
+.header a:hover, .header a:active {
+color: #123c69;
+}
+.header li { padding: 0px; }
+.header li a { margin: 0px; display: block; width: 100%; height: 100%; }
+
+.header ul {
+list-style-type: none;
+margin: 0;
+padding: 0;
+}
+
+.menu {
+font-size: 15px;
 }
 
 .menu ul {

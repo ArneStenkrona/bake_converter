@@ -7,7 +7,21 @@
 </head>
 
 <body>
+    <div class="header">
+        <ul>
+            <li><a href="index.html">bakeconverter.com</a></li>
+        </ul>
+    </div>
     <div class="row">
+        <div class="col-2">
+            <div class="menu">
+                <ul>
+                    <li><a href="index.html">weight and volume converter</a></li>
+                    <li><a href="temperature.html">temperature converter</a></li>
+                    <li><a href="about.html">about this site</a></li>
+                </ul>
+            </div>
+        </div>
         <div class="col-6 container">
             <div id="conversion">
                 <!-- <form id="my-form"> -->
@@ -23,7 +37,8 @@
                     <div class="section">
                         from
                         <div>
-                            🔢<input type="number" id="quantity_from" name="quantity_from_name" placeholder="1" min="0" style="max-width: 100px;">
+                            🔢<input type="number" id="quantity_from" name="quantity_from_name" placeholder="1" min="0"
+                                style="max-width: 100px;">
                             📏<datalist id="units_from">
                             </datalist>
                             <input autoComplete="on" list="units_from" placeholder="gram" id=unit_from>
@@ -53,15 +68,7 @@
                 </fieldset>
             </div>
         </div>
-        <div class="col-3 container">
-            <div class="menu">
-                <ul>
-                    <li><a href="index.html">weight and volume converter</a></li>
-                    <li><a href="temperature.html">temperature converter</a></li>
-                    <li><a href="about.html">about this site</a></li>
-                </ul>
-            </div>
-            <br>
+        <div class="col-3">
             <fieldset class="presets">
                 <legend>common conversions</legend>
                 <ul>
