@@ -114,18 +114,21 @@ function init() {
   }, false);
 
   unit_from.addEventListener('blur', function (event) {
+    unit_from.value = unit_from.value.toLowerCase();
     if (!units_set.has(unit_from.value)) {
       unit_from.value = latest_valid_unit_from;
     }
   }, false);
 
   unit_to.addEventListener('blur', function (event) {
+    unit_to.value = unit_to.value.toLowerCase();
     if (!units_set.has(unit_to.value)) {
       unit_to.value = latest_valid_unit_to;
     }
   }, false);
 
   ingredient.addEventListener('blur', function (event) {
+    ingredient.value = ingredient.value.toLowerCase();
     if (!ingredients_set.has(ingredient.value)) {
       ingredient.value = latest_valid_ingredient;
     }
