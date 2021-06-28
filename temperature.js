@@ -151,7 +151,7 @@ function initSets() {
   volume_in_ml.set("US gallon", 3785.41);
   volume_in_ml.set("US quart", 946.353);  
   volume_in_ml.set("US pint", 473.176);
-  volume_in_ml.set("US cup", 240);
+  volume_in_ml.set("US cup", 236.588);
   volume_in_ml.set("US fluid ounce", 29.5735);
   volume_in_ml.set("tablespoon", 15);
   volume_in_ml.set("teaspoon", 5);
