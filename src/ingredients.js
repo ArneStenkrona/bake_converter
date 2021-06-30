@@ -68,47 +68,22 @@ function updateResults() {
 function init() {
     initSets();
 
-    populateSelect(document.getElementById("unit_from"), units_set);
-    populateSelect(document.getElementById("unit_to"), units_set);
-    populateInput(document.getElementById("ingredients"), ingredients_set);
-
-    function putValueBackFromPlaceholder(input) {
-        if (input.value === '') {
-            input.value = input.getAttribute('placeholder');
-            input.setAttribute('placeholder', '');
-        }
-    }
-
-    var inputs = document.getElementById('conversion').getElementsByTagName('input');
-    for (var i = 0, input; input = inputs[i++];) {
-        putValueBackFromPlaceholder(input);
-
-        if (input.type != 'number') {
-            input.addEventListener('mousedown', function (event) {
-                var elem = event.target;
-
-                elem.setAttribute('placeholder', elem.value);
-                elem.value = '';
-
-            }, true);
-
-            input.addEventListener('mouseleave', function (event) {
-                putValueBackFromPlaceholder(event.target)
-            }, true);
-        }
-
-        input.addEventListener('input', updateResults, true);
-    }
-
     var quantity_from = document.getElementById("quantity_from");
     var unit_from = document.getElementById("unit_from");
     var unit_to = document.getElementById("unit_to");
     var ingredient = document.getElementById("ingredient");
     
+    populateSelect(unit_from, units_set);
+    populateSelect(unit_to, units_set);
+    populateSelect(ingredient, ingredients_set);
+
     unit_from.value = latest_valid_unit_from;
     unit_to.value = latest_valid_unit_to;
-    
+    ingredient.value = latest_valid_ingredient;
+
     updateResults();
+
+    quantity_from.addEventListener('input', updateResults, true);
 
     quantity_from.addEventListener('blur', function (event) {
         if (quantity_from.value === '') {
@@ -130,11 +105,12 @@ function init() {
         updateResults();
     }, false);
 
-    ingredient.addEventListener('blur', function (event) {
+    ingredient.addEventListener('change', function (event) {
         ingredient.value = ingredient.value.toLowerCase();
         if (!ingredients_set.has(ingredient.value)) {
             ingredient.value = latest_valid_ingredient;
         }
+        updateResults();
     }, true);
 
     var paramIngredient = getParameterByName("ingredient");
@@ -151,6 +127,9 @@ function init() {
         unit_to.value = paramUnitTo;
     }
     updateResults();
+
+    var options = {searchable: true, placeholder: ingredient.value };
+    NiceSelect.bind(ingredient, options);
 }
 
 function copyInput(id) {
@@ -174,13 +153,13 @@ function validInput() {
     ingredient.value = ingredient.value.toLowerCase();
 
     var ret = true;
-
+    
     if (quantity_from.value === '') {
         ret = false;
     } else {
         latest_valid_quantity_from = quantity_from.value;
     }
-
+    
     if (!units_set.has(unit_from.value)) {
         ret = false;
     } else {
@@ -234,15 +213,6 @@ function initSets() {
     for (let key of volume_in_ml.keys()) {
         units_set.add(key);
     }
-}
-
-function populateInput(element, set) {
-    var options = '';
-    for (let item of set) {
-        options += '<option value="' + item + '" />';
-    }
-
-    element.innerHTML = options;
 }
 
 function populateSelect(element, set) {

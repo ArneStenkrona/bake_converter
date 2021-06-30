@@ -4,7 +4,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="dist/css/nice-select2.css">
 </head>
 
 <body>
@@ -29,17 +30,16 @@
                     <legend>convert ingredient</legend>
                     <div class="section">
                         ingredient
-                        <div>
-                            <datalist id="ingredients">
-                            </datalist>
-                            <input autoComplete="on" name="ingredient_input" list="ingredients"
-                                placeholder="all purpose flour" id="ingredient">
+                        <div style="padding-top: 5px; padding-bottom: 8px;">
+                            <select class="wide" name="ingredients_name" id="ingredient" style="visibility: hidden;">
+                            </select>
+                            <br>
                         </div>
                     </div>
                     <div class="section">
                         from
                         <div>
-                            <input type="number" id="quantity_from" name="quantity_from_name" placeholder="1" min="0"
+                            <input type="number" id="quantity_from" name="quantity_from_name" value="1" min="0"
                                 style="max-width: 100px;">
                             <select name="units_from" id="unit_from" style="font-size: 20px;">
                             </select>
@@ -113,6 +113,7 @@
     </div>
 </body>
 
-<script src="ingredients.js"></script>
+<script src="dist/js/nice-select2.js"></script>
+<script src="src/ingredients.js"></script>
 
 </html>
