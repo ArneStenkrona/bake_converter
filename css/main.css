@@ -223,6 +223,17 @@ fieldset {
     width: 100%;
 }
 
+.paragraph {
+    background-color: #edc7b7;
+    border: none;
+    border-radius: 3px;
+    display: inline-block;
+    /* box-shadow: 0 0px 2px #333; */
+    margin-top: 10px;
+    padding: 10px;
+    width: 100%;
+}
+
 .unit {
     margin: 5px;
     background-color: #123c69;
