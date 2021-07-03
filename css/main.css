@@ -67,11 +67,12 @@ html {
     list-style-type: none;
     padding: 0;
     overflow: hidden; 
+    border: solid 2px;
 }
 
 .menu li {
     background-color: #edc7b7;
-    margin-bottom: 4px;
+    margin-bottom: 2px;
     border-radius: 3px;
 }
 
