@@ -268,7 +268,7 @@ button {
 .container {
     max-width: 600px;
     border-radius: 5px;
-    padding: 30px 15px;
+    padding: 7px;
     background-color: #eee2dc;
     display: inline-block;
     /* box-shadow: 0 10px 15px #333; */
