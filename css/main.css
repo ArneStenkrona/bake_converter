@@ -196,9 +196,8 @@ a:hover, a:active {
 body {
     background-color: #ffffff;
     font-family: Verdana;
-    font-size: 20px;
+    font-size: 18px;
     color: #000000;
-    font-weight: bold;
 }
 
 fieldset {
