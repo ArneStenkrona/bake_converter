@@ -67,7 +67,7 @@ html {
     list-style-type: none;
     padding: 0;
     overflow: hidden; 
-    border: solid 2px;
+    /* border: solid 2px; */
 }
 
 .menu li {
