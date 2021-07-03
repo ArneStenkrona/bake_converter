@@ -70,7 +70,7 @@ html {
     background-color: #edc7b7;
     font-weight: bold;
     margin-bottom: 4px;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 .presets ul {
@@ -89,7 +89,7 @@ html {
     color: #ffffff;
     text-align: center;
     font-size: 14px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); */
 }
 
 .footer {
@@ -204,7 +204,7 @@ fieldset {
     border: none;
     border-radius: 3px;
     display: inline-block;
-    box-shadow: 0 0px 2px #333;
+    /* box-shadow: 0 0px 2px #333; */
     border-top: 10px solid #ac3b61;
     width: 100%;
 }

@@ -39,10 +39,9 @@
                     <div class="section">
                         from
                         <div>
-                            <input type="number" id="quantity_from" name="quantity_from_name" value="1" min="0"
-                                style="max-width: 100px;">
                             <select name="units_from" id="unit_from" style="font-size: 20px;">
                             </select>
+                            <div class="flip"><button onclick="flipUnits(&quot;quantity_to&quot;)">&uarr;&darr;</button></div>
                         </div>
                     </div>
                     <div class="section">
@@ -50,6 +49,13 @@
                         <div>
                             <select name="units_to" id="unit_to" style="font-size: 20px;">
                             </select>
+                        </div>
+                    </div>
+                    <div class="section">
+                        quantity
+                        <div>
+                            <input type="number" id="quantity_from" name="quantity_from_name" value="1" min="0"
+                                style="max-width: 100px;">
                         </div>
                     </div>
                 </fieldset>
@@ -62,7 +68,6 @@
                             style="font-size:20px;text-align:right;max-width: 100px;">
                         <label class="unit" for="quantity_to" id=unit_text></label>
                         <button onclick="copyInput(&quot;quantity_to&quot;)">copy</button>
-                        <div class="flip"><button onclick="flipUnits(&quot;quantity_to&quot;)">flip units</button></div>
                     </div>
                 </fieldset>
             </div>
