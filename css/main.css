@@ -22,7 +22,7 @@ html {
 .header {
     margin: 5px;
     /* border-radius: 3px; */
-    border-bottom: 2px solid #123c69;
+    border-bottom: 1.5px solid #123c69;
     text-align: left;
     color: #123c69;
     font-weight: bold;
@@ -115,7 +115,7 @@ html {
     padding-left: 5px;
     padding-right: 5px;
     /* border-radius: 3px; */
-    border-top: 2px solid #123c69;
+    border-top: 1.5px solid #123c69;
 }
 
 .menu a:link, .menu a:visited {
