@@ -52,6 +52,12 @@ title: Ingredients
     </fieldset>
 </div>
 <div class="content">
+    <h2 style="margin: 8px 0px 8px 0px;">How do I convert ingredients?</h2>
+    Simply input an ingredient, a unit to convert from, a unit to convert to, and a quantity. The result will update instantly as you change the quantity.
+    <br>
+    <br>
+</div>
+<div class="content">
     <h2 style="margin: 8px 0px 8px 0px;">How does the ingredient converter work?</h2>
     Ingredient conversion works differently depending on what units you are converting between.
     <br>
@@ -62,54 +68,71 @@ title: Ingredients
         <li>Converting between different units of volume</li>
         <li>Converting between weight and volume</li>
     </ul>
-    <div class="content">
-        <h4 style="margin: 8px 0px 8px 0px;">Converting between different units of weight</h4>
-        Different units of weight are related to each other by a ratio. For example, a kilogram is exactly 1000 grams.
-        That means that in order to convert kilograms to gram, we simply multiply the value by 1000.
-        <br>
-        <br>
-        In general, for each combination of units of weight that we want to convert between we need to know their ratio.
-        After that, it is just a simple matter of multiplication.
-        <br>
-        <br>
-    </div>
-    If you would like to know the ratios for all the units of weight found in the converter you may explore the <a href="weights.html">weights table</a>.
+    All three cases are outlined below.
+</div>
+<div class="content">
+    <h4 style="margin: 8px 0px 8px 0px;">Converting between different units of weight</h4>
+    Different units of weight are related to each other by a ratio. For example, a kilogram is exactly 1000 grams.
+    That means that in order to convert kilograms to gram, we simply multiply the value by 1000.
     <br>
     <br>
-    <div class="content">
-        <h4 style="margin: 8px 0px 8px 0px;">Converting between different units of volume</h4>
-        Similar to units of weights, units of volume are also related to each other by a simple ratio. For example, one liter is about 4.227 US cups.
-        <br>
-        <br>
-        If you would like to know the ratios for all the units of volume found in the converter you may explore the <a href="volumes.html">volumes table</a>.
-        <br>
-        <br>
-    </div>
-    <div class="content">
-        <h4 style="margin: 8px 0px 8px 0px;">Converting between weight and volume</h4>
-        Conversion between weight and volume is a bit more involved as there is not a simple ratio that can convert between units of weight and volume. We must instead know the density of the ingredient we wish to convert.
-        <br>
-        <br>
-        The density, typically denoted by the greek letter ρ (rho), is defined as mass divided by volume. This can be expressed as an equation: ρ = m / V. Weight, in the context of cooking, is the same as mass*.
-        <br>
-        <br>
-        Using the equation, we can calculate the mass as m = ρ · V, and volume as V = m / ρ. Just like weight and volume, density has to be expressed in units, for examples grams per milliliter or g/ml. 
-        <br>
-        <br>
-        Say that we want to convert 1kg of all purpose flour into US cups. Assume that we know the density of flour is 0.53 g/ml. First we convert 1kg into 1000g. Using the formula we see that V = 1000g / (0.53 g/ml) which gives us 1886.792... ml. From our table of volumes we see that 1 ml is roughly 0.00423 US cups. 1886.792 · 0.00423 ≈ 7.98.
-        <br>
-        <br>
-        All that work just to find out that 1kg of all purpose flour is 7.98 US cups. Luckily the converter will do this automatically for you if you just pick the units and quantity.
-        <br>
-        <br>
-        What if you want to convert volume to weight? Say 1 US cup of flour to kg? We use our volumes table to find out that 1 US cup is roughly 236.588 ml. The equation gives us that m = (0.53 g/ml) · 236.588, that is 125.392 grams. Multiplying by 1000 as per our weights table and rounding the results gives us 0.125kg.
-        <br>
-        <br>
-        If you would like to know the densities for all the ingredients found in the converter you may explore the <a href="ingredients_table.html">ingredients table</a>.
-        <br>
-        <br>
-        <div style="font-size: 10px;">(*In physics, weight denotes the force of gravity acting upon an object and is calculated by multiplying the mass by the graviational acceleration. However, in cooking we use weight to simply refer to mass. For more information please checkout  <a href="https://en.wikipedia.org/wiki/Weight" target="_blank">wikipedia</a>.)</div>
-        <br>
-        <br>
-    </div>
+    In general, for each combination of units of weight that we want to convert between we need to know their ratio.
+    After that, it is just a simple matter of multiplication.
+    <br>
+    <br>
+</div>
+If you would like to know the ratios for all the units of weight found in the converter you may explore the <a
+    href="weights.html">weights table</a>.
+<br>
+<br>
+<div class="content">
+    <h4 style="margin: 8px 0px 8px 0px;">Converting between different units of volume</h4>
+    Similar to units of weights, units of volume are also related to each other by a simple ratio. For example, one
+    liter is about 4.227 US cups.
+    <br>
+    <br>
+    If you would like to know the ratios for all the units of volume found in the converter you may explore the <a
+        href="volumes.html">volumes table</a>.
+    <br>
+    <br>
+</div>
+<div class="content">
+    <h4 style="margin: 8px 0px 8px 0px;">Converting between weight and volume</h4>
+    Conversion between weight and volume is a bit more involved as there is not a simple ratio that can convert
+    between units of weight and volume. We must instead know the density of the ingredient we wish to convert.
+    <br>
+    <br>
+    The density, typically denoted by the greek letter ρ (rho), is defined as mass divided by volume. This can be
+    expressed as an equation: ρ = m / V. Weight, in the context of cooking, is the same as mass*.
+    <br>
+    <br>
+    Using the equation, we can calculate the mass as m = ρ · V, and volume as V = m / ρ. Just like weight and
+    volume, density has to be expressed in units, for examples grams per milliliter or g/ml.
+    <br>
+    <br>
+    Say that we want to convert 1kg of all purpose flour into US cups. Assume that we know the density of flour is
+    0.53 g/ml. First we convert 1kg into 1000g. Using the formula we see that V = 1000g / (0.53 g/ml) which gives us
+    1886.792... ml. From our table of volumes we see that 1 ml is roughly 0.00423 US cups. 1886.792 · 0.00423 ≈
+    7.98.
+    <br>
+    <br>
+    All that work just to find out that 1kg of all purpose flour is 7.98 US cups. Luckily the converter will do this
+    automatically for you if you just pick the units and quantity.
+    <br>
+    <br>
+    What if you want to convert volume to weight? Say 1 US cup of flour to kg? We use our volumes table to find out
+    that 1 US cup is roughly 236.588 ml. The equation gives us that m = (0.53 g/ml) · 236.588, that is 125.392
+    grams. Multiplying by 1000 as per our weights table and rounding the results gives us 0.125kg.
+    <br>
+    <br>
+    If you would like to know the densities for all the ingredients found in the converter you may explore the <a
+        href="ingredients_table.html">ingredients table</a>.
+    <br>
+    <br>
+    <div style="font-size: 10px;">(*In physics, weight denotes the force of gravity acting upon an object and is
+        calculated by multiplying the mass by the graviational acceleration. However, in cooking we use weight to
+        simply refer to mass. For more information please checkout <a href="https://en.wikipedia.org/wiki/Weight"
+            target="_blank">wikipedia</a>.)</div>
+    <br>
+    <br>
 </div>
