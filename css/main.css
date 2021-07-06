@@ -35,7 +35,7 @@ html {
     padding: 14px 25px;
     text-decoration: none;
     display: inline-block;
-    border-radius: 10px;
+    /* border-radius: 10px; */
 }
 
 .header a:hover, .header a:active {
@@ -67,23 +67,25 @@ html {
     list-style-type: none;
     padding: 0;
     overflow: hidden; 
-    border-radius: 3px;
+    border-radius: 1.5px;
+    background-color: #e5eef7;
 }
 
 .menu li {
-    background-color: #edc7b7;
+    /* background-color: #d1d1d1; */
     /* margin: 1.5px; */
     /* border-radius: 3px; */
-    margin-bottom: 2px;
+    border-bottom: solid 2px #b8cde4;
+    /* margin-bottom: 2px; */
 }
 
 .menu li:last-child {
     margin-bottom: 0;
-    border-bottom: solid 3px #ac3b61;
+    border-bottom: solid 3px #b8cde4;
 }
 
 .menu li:first-child {
-    border-top: solid 3px #ac3b61;
+    border-top: solid 3px #b8cde4;
 }
 
 .presets ul {
@@ -93,11 +95,11 @@ html {
 }
 
 .menu li:hover {
-    background-color: #0099cc;
+    background-color: #91b4da;
 }
 
 .aside {
-    background-color: #33b5e5;
+    background-color: #91b4da;
     padding: 15px;
     color: #ffffff;
     text-align: center;
@@ -214,17 +216,17 @@ body {
 }
 
 fieldset {
-    background-color: #edc7b7;
+    background-color: #e5eef7;
     border: none;
     border-radius: 2px;
     display: inline-block;
     /* box-shadow: 0 0px 2px #333; */
-    border-top: 10px solid #ac3b61;
+    border-top: 5px solid #b8cde4;
     width: 100%;
 }
 
 .paragraph {
-    background-color: #edc7b7;
+    /* background-color: #d1d1d1; */
     border: none;
     border-radius: 3px;
     display: inline-block;
@@ -236,8 +238,8 @@ fieldset {
 
 .unit {
     margin: 5px;
-    background-color: #123c69;
-    color: #ffffff;
+    /* background-color: #123c69; */
+    color: #123c69;
     padding-left: 5px;
     padding-right: 5px;
     padding-bottom: 2px;
@@ -248,17 +250,18 @@ fieldset {
 .section {
     margin: 5px;
     background-color: #b8cde4;
+    border-bottom: solid 1.5px;
     color: #123c69;
     padding: 5px 5px;
-    border-radius: 3px;
-    box-shadow: 0 0px 2px #333;
+    border-radius: 1.5px;
+    /* box-shadow: 0 0px 2px #333; */
     font-weight: bold;
 }
 
 legend {
-    background-color: #ac3b61;
-    color: #eedde3;
-    padding: 5px 5px;
+    background-color: #b8cde4;
+    color: #123c69;
+    padding: 2px 5px;
     border-radius: 2px;
     font-weight: bold;
 }
