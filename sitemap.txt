@@ -1,3 +1,7 @@
 https://www.bakeconverter.com/index.html
 https://www.bakeconverter.com/temperature.html
 https://www.bakeconverter.com/about.html
+https://www.bakeconverter.com/volumes.html
+https://www.bakeconverter.com/weights.html
+https://www.bakeconverter.com/ingredients_table.html
+https://www.bakeconverter.com/contact.html
