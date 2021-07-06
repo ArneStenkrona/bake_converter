@@ -66,7 +66,7 @@ html {
 .menu ul {
     list-style-type: none;
     padding: 0;
-    overflow: hidden; 
+    overflow: hidden;
     border-radius: 1.5px;
     background-color: #e5eef7;
 }
@@ -225,6 +225,14 @@ fieldset {
     width: 100%;
 }
 
+.content {
+    border: none;
+    display: inline-block;
+    width: 100%;
+    margin-top: 25px;
+    border-top: solid 1px #123c69;
+}
+
 .paragraph {
     /* background-color: #d1d1d1; */
     border: none;
@@ -292,4 +300,34 @@ button {
 .flip {
     display: inline-block;
     font-size: 20px;
+}
+
+table {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table td, table th {
+    padding: 10px;
+}
+
+table tr:nth-child(even) {
+    background-color: #e5eef7;
+}
+
+table tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+table th {
+    color: #123c69;
+    background-color: #b8cde4;
+}
+
+.table_title {
+    text-align: center;
+    color: #123c69;
+    margin-left: auto;
+    margin-right: auto;
 }

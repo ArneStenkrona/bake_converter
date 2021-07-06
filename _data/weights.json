@@ -1,0 +1,18 @@
+[
+    {
+        "unit": "kilogram",
+        "unit_in_grams": 1000.0
+    },
+    {
+        "unit": "gram",
+        "unit_in_grams": 1.0
+    },
+    {
+        "unit": "ounce",
+        "unit_in_grams": 28.3495
+    },
+    {
+        "unit": "pound",
+        "unit_in_grams": 453.592
+    },
+]

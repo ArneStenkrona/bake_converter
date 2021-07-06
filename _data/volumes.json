@@ -1,0 +1,67 @@
+
+[
+    {
+        "unit": "milliliter",
+        "unit_in_ml": 1.0
+    },
+    {
+        "unit": "centiliter",
+        "unit_in_ml": 10.0
+    },
+    {
+        "unit": "deciliter",
+        "unit_in_ml": 100.0
+    },
+    {
+        "unit": "liter",
+        "unit_in_ml": 1000.0
+    },
+    {
+        "unit": "US gallon",
+        "unit_in_ml": 3785.41
+    },
+    {
+        "unit": "US quart",
+        "unit_in_ml": 946.353
+    },
+    {
+        "unit": "US pint",
+        "unit_in_ml": 473.176
+    },
+    {
+        "unit": "US cup",
+        "unit_in_ml": 236.588
+    },
+    {
+        "unit": "US fluid ounce",
+        "unit_in_ml": 29.5735
+    },
+    {
+        "unit": "tablespoon",
+        "unit_in_ml": 15.0
+    },
+    {
+        "unit": "teaspoon",
+        "unit_in_ml": 5.0
+    },
+    {
+        "unit": "imperial gallon",
+        "unit_in_ml": 4546.09
+    },
+    {
+        "unit": "imperial quart",
+        "unit_in_ml": 1136.52
+    },
+    {
+        "unit": "imperial pint",
+        "unit_in_ml": 568.261
+    },
+    {
+        "unit": "imperial cup",
+        "unit_in_ml": 284.131
+    },
+    {
+        "unit": "imperial fluid ounce",
+        "unit_in_ml": 28.4131
+    },
+]

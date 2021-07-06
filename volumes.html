@@ -1,0 +1,35 @@
+---
+layout: default
+title: volume
+---
+<fieldset style="font-weight: normal;">
+    <legend>volumes</legend>
+    Below you'll find conversion tables for all units of volume used in the <a href="index.html">weight and volume
+        converter</a>.
+</fieldset>
+
+{% for unit1 in site.data.volumes %}
+<div class="content">
+    <h2 class="table_title">{{ unit1.unit }}</h2>
+    <table>
+        <tr>
+            <!-- <th></th> -->
+            <!-- <th>{{ unit1.unit }}</th> -->
+            {% for unit2 in site.data.volumes %}
+        </tr>
+        <tr>
+            {% if unit1.unit != unit2.unit %}
+            <th>
+                {{ unit2.unit }}
+            </th>
+            <td>
+                {% assign val = unit2.unit_in_ml | divided_by: unit1.unit_in_ml | round: 3 %}
+                {{ val }} {{ unit1.unit }}{% if val != 1.0 %}s{% endif %}
+            </td>
+            {% endif %}
+        </tr>
+        {% endfor %}
+    </table>
+</fieldset>
+</div>
+{% endfor %}
