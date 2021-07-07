@@ -17,8 +17,8 @@ title: weights
             <!-- <th>{{ unit1.unit }}</th> -->
             {% for unit2 in site.data.weights %}
         </tr>
+        {% if unit1.unit != unit2.unit %}
         <tr>
-            {% if unit1.unit != unit2.unit %}
             <th>
                 {{ unit2.unit }}
             </th>
@@ -26,8 +26,8 @@ title: weights
                 {% assign val = unit2.unit_in_grams | divided_by: unit1.unit_in_grams | round: 3 %}
                 {{ val }} {{ unit1.unit }}{% if val != 1.0 %}s{% endif %}
             </td>
-            {% endif %}
         </tr>
+        {% endif %}
         {% endfor %}
     </table>
 </fieldset>
