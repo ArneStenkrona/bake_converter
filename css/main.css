@@ -42,8 +42,7 @@ html {
     text-decoration: underline
 }
 
-.header a:link:active, .header a:link:focus, .header a:link:hover, .header a:visited:active, .header a:visited:focus,
-.header a:visited:hover {
+.header a:link:active, .header a:link:focus, .header a:link:hover, .header a:visited:active, .header a:visited:focus, .header a:visited:hover {
     color: #3f85f3;
     text-decoration: none
 }
@@ -73,7 +72,7 @@ html {
     list-style-type: none;
     padding: 0;
     overflow: hidden;
-    border-radius: 3px;
+    /* border-radius: 4px; */
     /* background-color: #3f85f3; */
 }
 
@@ -81,8 +80,18 @@ html {
     /* background-color: #d1d1d1; */
     /* margin: 1.5px; */
     /* border-radius: 3px; */
-    border-bottom: solid 1px #b8cde4;
+    /* border-bottom: solid 1px #b8cde4; */
+    border-radius: 4px;
     /* margin-bottom: 2px; */
+}
+
+.menu hr {
+    margin-bottom: -2px;
+    margin-top: -1px;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    color: #c7c7c7;
 }
 
 .menu li:last-child {
@@ -148,8 +157,7 @@ html {
     height: 100%;
 }
 
-.menu a:link:active, .menu a:link:focus, .menu a:link:hover, .menu a:visited:active, .menu a:visited:focus,
-.menu a:visited:hover {
+.menu a:link:active, .menu a:link:focus, .menu a:link:hover, .menu a:visited:active, .menu a:visited:focus, .menu a:visited:hover {
     color: #ffffff;
     text-decoration: none
 }
@@ -237,7 +245,7 @@ fieldset {
     display: inline-block;
     width: 100%;
     margin-top: 25px;
-    border-top: solid 1px #b8cde4;
+    border-top: solid 1px #c7c7c7;
 }
 
 .paragraph {
@@ -280,7 +288,7 @@ fieldset {
 }
 
 .ingredient-selector {
-    padding-top: 5px; 
+    padding-top: 5px;
     padding-bottom: 8px;
     color: #000000
 }
@@ -396,13 +404,11 @@ a:focus, a:hover {
     text-decoration: underline
 }
 
-
 a:link, a:visited {
     color: #00458b;
     text-decoration: none
 }
 
-a:link:active, a:link:focus, a:link:hover, a:visited:active, a:visited:focus,
-a:visited:hover {
+a:link:active, a:link:focus, a:link:hover, a:visited:active, a:visited:focus, a:visited:hover {
     text-decoration: underline
 }
