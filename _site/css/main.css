@@ -22,15 +22,15 @@ html {
 .header {
     margin: 5px;
     /* border-radius: 3px; */
-    border-bottom: 1.5px solid #123c69;
+    border-bottom: 1.5px solid #c7c7c7;
     text-align: left;
-    color: #123c69;
+    color: #3f85f3;
     font-weight: bold;
     font-size: 20px;
 }
 
 .header a {
-    color: #123c69;
+    color: #3f85f3;
     font-weight: bold;
     padding: 14px 25px;
     text-decoration: none;
@@ -38,8 +38,14 @@ html {
     /* border-radius: 10px; */
 }
 
-.header a:hover, .header a:active {
-    color: #123c69;
+.header a:focus, .header a:hover {
+    text-decoration: underline
+}
+
+.header a:link:active, .header a:link:focus, .header a:link:hover, .header a:visited:active, .header a:visited:focus,
+.header a:visited:hover {
+    color: #3f85f3;
+    text-decoration: none
 }
 
 .header li {
@@ -67,25 +73,26 @@ html {
     list-style-type: none;
     padding: 0;
     overflow: hidden;
-    border-radius: 1.5px;
-    background-color: #e5eef7;
+    border-radius: 3px;
+    /* background-color: #3f85f3; */
 }
 
 .menu li {
     /* background-color: #d1d1d1; */
     /* margin: 1.5px; */
     /* border-radius: 3px; */
-    border-bottom: solid 2px #b8cde4;
+    border-bottom: solid 1px #b8cde4;
     /* margin-bottom: 2px; */
 }
 
 .menu li:last-child {
     margin-bottom: 0;
-    border-bottom: solid 3px #b8cde4;
+    border-bottom: none;
+    /* border-bottom: solid 3px #b8cde4; */
 }
 
 .menu li:first-child {
-    border-top: solid 3px #b8cde4;
+    /* border-top: solid 3px #b8cde4; */
 }
 
 .presets ul {
@@ -95,11 +102,11 @@ html {
 }
 
 .menu li:hover {
-    background-color: #91b4da;
+    background-color: #849bc2;
 }
 
 .aside {
-    background-color: #91b4da;
+    background-color: #849bc2;
     padding: 15px;
     color: #ffffff;
     text-align: center;
@@ -108,20 +115,19 @@ html {
 }
 
 .footer {
-    color: #000000;
     text-align: center;
     font-size: 12px;
     font-weight: bold;
     margin: 5px;
-    color: #123c69;
+    color: #3f85f3;
     padding-left: 5px;
     padding-right: 5px;
     /* border-radius: 3px; */
-    border-top: 1.5px solid #123c69;
+    border-top: 1.5px solid #c7c7c7;
 }
 
 .menu a:link, .menu a:visited {
-    color: #000000;
+    color: #3f85f3;
     font-weight: normal;
     padding: 10px 6px;
     text-align: center;
@@ -129,10 +135,6 @@ html {
     display: inline-block;
     word-wrap: normal;
     /* border-radius: 10px; */
-}
-
-a:hover, a:active {
-    color: #ffffff;
 }
 
 .menu li {
@@ -144,6 +146,12 @@ a:hover, a:active {
     display: block;
     width: 100%;
     height: 100%;
+}
+
+.menu a:link:active, .menu a:link:focus, .menu a:link:hover, .menu a:visited:active, .menu a:visited:focus,
+.menu a:visited:hover {
+    color: #ffffff;
+    text-decoration: none
 }
 
 .presets li {
@@ -185,6 +193,7 @@ a:hover, a:active {
     }
     .col-6 {
         width: 50%;
+        box-shadow: -5px 0 5px -5px #666, 5px 0 5px -5px #666;
     }
     .col-7 {
         width: 58.33%;
@@ -210,18 +219,16 @@ a:hover, a:active {
 
 body {
     background-color: #ffffff;
-    font-family: Verdana;
+    font-family: 'Roboto', sans-serif;
     font-size: 16px;
-    color: #000000;
+    /* color: #000000; */
+    color: #707070;
 }
 
 fieldset {
-    background-color: #e5eef7;
-    border: none;
-    border-radius: 2px;
+    border: none 1px #b8cde4;
+    border-radius: 8px;
     display: inline-block;
-    /* box-shadow: 0 0px 2px #333; */
-    border-top: 5px solid #b8cde4;
     width: 100%;
 }
 
@@ -230,15 +237,13 @@ fieldset {
     display: inline-block;
     width: 100%;
     margin-top: 25px;
-    border-top: solid 1px #123c69;
+    border-top: solid 1px #b8cde4;
 }
 
 .paragraph {
-    /* background-color: #d1d1d1; */
     border: none;
     border-radius: 3px;
     display: inline-block;
-    /* box-shadow: 0 0px 2px #333; */
     margin-top: 10px;
     padding: 10px;
     width: 100%;
@@ -246,8 +251,7 @@ fieldset {
 
 .unit {
     margin: 5px;
-    /* background-color: #123c69; */
-    color: #123c69;
+    color: #ffffff;
     padding-left: 5px;
     padding-right: 5px;
     padding-bottom: 2px;
@@ -257,21 +261,21 @@ fieldset {
 
 .section {
     margin: 5px;
-    background-color: #b8cde4;
-    border-bottom: solid 1.5px;
-    color: #123c69;
-    padding: 5px 5px;
-    border-radius: 1.5px;
-    /* box-shadow: 0 0px 2px #333; */
+    background-color: #849bc2;
+    /* border: solid 1.5px #b8cde4; */
+    border-radius: 8px;
+    color: #ffffff;
+    padding: 5px 10px;
     font-weight: bold;
 }
 
 legend {
-    background-color: #b8cde4;
-    color: #123c69;
+    /* background-color: #b8cde4; */
+    color: #3f85f3;
     padding: 2px 5px;
     border-radius: 2px;
     font-weight: bold;
+    font-size: 20px;
 }
 
 input {
@@ -281,10 +285,39 @@ input {
     color: #000000
 }
 
-button {
+/* button {
     font-family: Verdana;
     font-size: 13px;
     color: #000000;
+} */
+
+button {
+    display: inline-block;
+    padding: 0.35em 1.2em;
+    border: 0.1em solid #FFFFFF;
+    margin: 0 0.3em 0.3em 0;
+    border-radius: 0.18em;
+    box-sizing: border-box;
+    text-decoration: none;
+    /* font-family: 'Roboto', sans-serif; */
+    font-size: 13px;
+    color: #000000;
+    text-align: center;
+    transition: all 0.05s;
+    background-color: #FFFFFF;
+}
+
+button:hover {
+    color: #3f85f3;
+    border: 0.1em solid #3f85f3;
+    background-color: #FFFFFF;
+}
+
+@media all and (max-width:30em) {
+    button {
+        display: block;
+        margin: 0.4em auto;
+    }
 }
 
 .container {
@@ -310,24 +343,50 @@ table {
 
 table td, table th {
     padding: 10px;
-}
-
-table tr:nth-child(even) {
-    background-color: #e5eef7;
-}
-
-table tr:nth-child(odd) {
-    background-color: #fff;
+    font-weight: bold;
 }
 
 table th {
-    color: #123c69;
-    background-color: #b8cde4;
+    color: #ffffff;
+    background-color: #3f85f3;
+}
+
+table td {
+    border-radius: 2px;
+}
+
+table tr:nth-child(even) {
+    background-color: #bbbbbb;
+    color: #ffffff
+}
+
+table tr:nth-child(odd) {
+    background-color: #ffffff;
 }
 
 .table_title {
     text-align: center;
-    color: #123c69;
+    color: #3f85f3;
     margin-left: auto;
     margin-right: auto;
+}
+
+a {
+    color: #00458b;
+    text-decoration: none
+}
+
+a:focus, a:hover {
+    text-decoration: underline
+}
+
+
+a:link, a:visited {
+    color: #00458b;
+    text-decoration: none
+}
+
+a:link:active, a:link:focus, a:link:hover, a:visited:active, a:visited:focus,
+a:visited:hover {
+    text-decoration: underline
 }
