@@ -269,6 +269,22 @@ fieldset {
     font-weight: bold;
 }
 
+.section {
+    margin: 5px;
+    background-color: #849bc2;
+    /* border: solid 1.5px #b8cde4; */
+    border-radius: 8px;
+    color: #ffffff;
+    padding: 5px 10px;
+    font-weight: bold;
+}
+
+.ingredient-selector {
+    padding-top: 5px; 
+    padding-bottom: 8px;
+    color: #000000
+}
+
 legend {
     /* background-color: #b8cde4; */
     color: #3f85f3;
@@ -294,7 +310,7 @@ input {
 button {
     display: inline-block;
     padding: 0.35em 1.2em;
-    border: 0.1em solid #FFFFFF;
+    border: 0.1em solid #ffffff;
     margin: 0 0.3em 0.3em 0;
     border-radius: 0.18em;
     box-sizing: border-box;
@@ -304,13 +320,13 @@ button {
     color: #000000;
     text-align: center;
     transition: all 0.05s;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
 }
 
 button:hover {
     color: #3f85f3;
     border: 0.1em solid #3f85f3;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
 }
 
 @media all and (max-width:30em) {
