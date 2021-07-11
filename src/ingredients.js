@@ -116,6 +116,7 @@ function init() {
     var paramIngredient = getParameterByName("ingredient");
     var paramUnitFrom = getParameterByName("from");
     var paramUnitTo = getParameterByName("to");
+    var paramQuantityFrom = getParameterByName("quantity");
 
     if (paramIngredient != null) {
         ingredient.value = paramIngredient;
@@ -125,6 +126,9 @@ function init() {
     }
     if (paramUnitTo != null) {
         unit_to.value = paramUnitTo;
+    }
+    if (paramQuantityFrom != null) {
+        quantity_from.value = paramQuantityFrom;
     }
     updateResults();
 
