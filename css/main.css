@@ -302,6 +302,15 @@ legend {
     font-size: 20px;
 }
 
+.convert-heading {
+    /* background-color: #b8cde4; */
+    color: #3f85f3;
+    padding: 2px 5px;
+    border-radius: 2px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
 input {
     margin: 5px;
     font-family: Verdana;

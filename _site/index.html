@@ -40,8 +40,7 @@
 <script src="src/ingredients.js"></script>
 
 <div id="conversion">
-    <fieldset>
-        <legend>convert ingredient</legend>
+        <h1 class="convert-heading">convert ingredient</h1>
         <div class="section">
             ingredient
             <div class="ingredient-selector">
@@ -73,18 +72,15 @@
                     style="max-width: 100px;">
             </div>
         </div>
-    </fieldset>
 </div>
 <div id="results">
-    <fieldset>
-        <legend id=result_legend>...</legend>
+        <h1 class="convert-heading" id=result_legend>...</h1>
         <div class="section">
             <input type="text" value="..." id="quantity_to" readonly
                 style="font-size:20px;text-align:right;max-width: 100px;">
             <label class="unit" for="quantity_to" id=unit_text></label>
             <button onclick="copyInput(&quot;quantity_to&quot;)">copy</button>
         </div>
-    </fieldset>
 </div>
 <div class="content">
     <h2 style="margin: 8px 0px 8px 0px;">How do I convert ingredients?</h2>
