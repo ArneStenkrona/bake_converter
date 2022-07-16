@@ -9,8 +9,8 @@ const units_set = new Set();
 
 var latest_valid_quantity_from = '1';
 var latest_valid_ingredient = "all purpose flour";
-var latest_valid_unit_from = "kilogram";
-var latest_valid_unit_to = "US cup";
+var latest_valid_unit_from = "US cup";
+var latest_valid_unit_to = "gram";
 
 document.addEventListener("DOMContentLoaded", function () {
     const myHeaders = new Headers();
@@ -72,7 +72,7 @@ function init() {
     var unit_from = document.getElementById("unit_from");
     var unit_to = document.getElementById("unit_to");
     var ingredient = document.getElementById("ingredient");
-    
+
     populateSelect(unit_from, units_set);
     populateSelect(unit_to, units_set);
     populateSelect(ingredient, ingredients_set);
@@ -157,13 +157,13 @@ function validInput() {
     ingredient.value = ingredient.value.toLowerCase();
 
     var ret = true;
-    
+
     if (quantity_from.value === '') {
         ret = false;
     } else {
         latest_valid_quantity_from = quantity_from.value;
     }
-    
+
     if (!units_set.has(unit_from.value)) {
         ret = false;
     } else {
